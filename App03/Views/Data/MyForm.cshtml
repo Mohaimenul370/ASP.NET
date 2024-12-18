@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "MyForm";
+}
+
+<h3 class="text-success">Show MyForm</h3>
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <form asp-action="MyForm" method="get">
+            <input type="text" name="usertext" class="form-control" value="@ViewBag.Usertext" placeholder="please type your message..." />
+            <br />
+            <input type="number" name="num" class="form-control" value="@ViewBag.Num" placeholder="please type your number..." />
+            <br />
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+</div>
+
+@if (ViewBag.Usertext!=null){
+    for(int i=0;i<ViewBag.Num;i++)
+    {
+        <h3 class="alert alert-primary">@(i+1).@ViewBag.Usertext</h3>
+    }
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "FileData";
+    string rootfolder = @"C:\";
+    string[] filelist = System.IO.Directory.GetFiles(rootfolder);
+}
+
+<h3 class="text-success">File Data Action Method of Data controller</h3>
+
+
+<div class="row">
+    <div class="col-md-12">
+        
+            <table class="table table-border striped">
+                <thead>
+                    <tr>
+                        <th>SL</th>
+                        <th>File Name</th>
+                        <th>Extention</th>
+                        <th>Full Path</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @for (int i = 0; i < filelist.Length; i++)
+                {
+                    <tr>
+
+                        <td>@(i+1).</td>
+                        <td>@System.IO.Path.GetFileNameWithoutExtension(filelist[i])</td>
+                        <td>@System.IO.Path.GetExtension(filelist[i])</td>
+                        <td>@filelist[i]</td>
+                    </tr>
+                    <h5 class="text-primary">@filelist[i]</h5>
+                }
+                </tbody>
+            </table>
+        
+    </div>
+
+</div>

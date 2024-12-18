@@ -1,0 +1,42 @@
+﻿
+@model List<App03.Models.FileDetail>
+@{
+    ViewData["Title"] = "FileData";
+    int i = 1;
+}
+
+<h3 class="text-success">File Data Action Method of Data controller</h3>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <table class="table table-border striped">
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>File Name</th>
+                    <th>Extention</th>
+                    <th>Full Path</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (FileDetail f in Model)
+                {
+                    <tr>
+
+                        <td>@i.</td>
+                        <td>@f.FileName</td>
+                        <td>@f.Extension</td>
+                        <td>@f.FullPath</td>
+                    </tr>
+                    i++;
+                  
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+

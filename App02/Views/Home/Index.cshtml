@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div>
+
+<div class="text-center">
+    <h4 class="text-primary">@ViewBag.msg</h4>
+    <br />
+    <form asp-action="index" method="get">
+    <input type="text" name="usertext" class="form-control" placeholder="please type your text here..." />
+    <button type="submit" class="btn btn-primary btn-md">Submit</button>
+    </form>
+</div>
